@@ -1,0 +1,23 @@
+{
+  "name": "yt-takeover",
+  "version": "1.0.0",
+  "description": "Starter set with Lerna, Redux, and React-Router",
+  "main": "index.js",
+  "author": "Ryan Bell",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "web-client"
+  ],
+  "scripts": {
+    "start": "lerna run start --stream --parallel",
+    "build": "lerna run build",
+    "build:production": "REACT_APP_DATA_ENV=production lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "test": "yarn build && lerna run test --ci"
+  },
+  "devDependencies": {
+    "lerna": "^3.4.3"
+  }
+}
