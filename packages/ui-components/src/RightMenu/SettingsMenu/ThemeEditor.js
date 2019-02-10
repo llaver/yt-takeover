@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import ListSubheader from "@material-ui/core/ListSubheader";
+import Swatch from "../../Common/Swatch";
 
 const styles = theme => {
   return {
@@ -18,6 +19,10 @@ const styles = theme => {
       letterSpacing: "0.2rem",
       color: "#e58425",
       textAlign: "center"
+    },
+    swatchContainer: {
+      display: "flex",
+      justifyContent: "center"
     }
   };
 };
@@ -31,6 +36,13 @@ class ThemeEditor extends Component {
           <ListSubheader className={classes.title}>SETTINGS</ListSubheader>
           <div>
             <ListSubheader className={classes.subtitle}>COLOR</ListSubheader>
+            <div className={classes.swatchContainer}>
+              <Swatch />
+              <Swatch />
+              <Swatch />
+              <Swatch />
+              <Swatch />
+            </div>
           </div>
         </div>
       </Fragment>

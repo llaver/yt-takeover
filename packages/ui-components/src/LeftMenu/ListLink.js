@@ -9,6 +9,7 @@ const styles = theme => {
   return {
     listItem: {
       fontSize: "1.1rem",
+      letterSpacing: "0.2rem",
       height: "25px",
       paddingTop: "15px",
       paddingBottom: "15px",

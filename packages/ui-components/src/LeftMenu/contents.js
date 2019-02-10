@@ -15,9 +15,11 @@ const styles = theme => {
     },
     subheader: {
       fontSize: "1.2rem",
+      letterSpacing: "0.2rem",
       color: "#e58425",
       lineHeight: "36px",
-      textAlign: "center"
+      textAlign: "center",
+      padding: 0
     },
     divider: {
       width: "150px",
