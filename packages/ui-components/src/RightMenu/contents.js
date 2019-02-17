@@ -4,8 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
-import { ThemeEditor } from "./SettingsMenu";
-
 const styles = theme => {
   return {
     subheader: {
@@ -41,7 +39,7 @@ const styles = theme => {
   };
 };
 
-class MainMenuContents extends Component {
+class RightMenuContents extends Component {
   state = {
     value: 0
   };
@@ -52,7 +50,7 @@ class MainMenuContents extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, ThemeEditor } = this.props;
 
     return (
       <Fragment>
@@ -88,11 +86,11 @@ class MainMenuContents extends Component {
             </Tabs>
           </AppBar>
           {this.state.value === 0 && null}
-          {this.state.value === 1 && <ThemeEditor />}
+          {this.state.value === 1 && <div>{<ThemeEditor />}</div>}
         </div>
       </Fragment>
     );
   }
 }
 
-export default withStyles(styles, { withTheme: true })(MainMenuContents);
+export default withStyles(styles, { withTheme: true })(RightMenuContents);

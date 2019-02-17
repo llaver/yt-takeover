@@ -35,6 +35,7 @@ const RightMenu = props => {
           push={props.push}
           onSignOut={props.onSignOut}
           feedbackLink={props.feedbackLink}
+          ThemeEditor={props.ThemeEditor}
         />
       </Drawer>
     </Fragment>

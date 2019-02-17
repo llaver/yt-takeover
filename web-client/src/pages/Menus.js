@@ -5,17 +5,13 @@ import { push } from "react-router-redux";
 import Core from "core";
 import Components from "ui-components";
 
+import ThemeEditor from "../Components/RightMenu/ThemeEditor";
+
 const { actions, selectors } = Core.screenMenus;
 const RightMenu = Components.RightMenu;
 const LeftMenu = Components.LeftMenu;
 
 const MenuController = props => {
-  console.log(
-    "left open?",
-    props.leftMenuOpen,
-    "right open?",
-    props.rightMenuOpen
-  );
   return (
     <Fragment>
       <div
@@ -39,6 +35,7 @@ const MenuController = props => {
           push={props.push}
           onSignOut={props.onSignOut}
           feedbackLink={props.feedbackLink}
+          ThemeEditor={ThemeEditor}
         />
       </div>
     </Fragment>

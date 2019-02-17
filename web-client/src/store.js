@@ -10,12 +10,13 @@ import { routerReducer, routerMiddleware } from "react-router-redux";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const { screenMenus, screenSignIn, userInfo } = Core;
+const { screenMenus, screenSignIn, themeEditor, userInfo } = Core;
 
 const appReducer = combineReducers({
   router: routerReducer,
   screenMenus: screenMenus.reducer,
   screenSignIn: screenSignIn.reducer,
+  themeEditor: themeEditor.reducer,
   userInfo: userInfo.reducer
 });
 

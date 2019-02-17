@@ -7,3 +7,5 @@ import "./nav-bar";
 import "./sign-in";
 
 import "./search-bar";
+
+import "./swatch";

@@ -3,6 +3,8 @@ import { withStyles } from "@material-ui/core/styles";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Swatch from "../../Common/Swatch";
 
+const COLORS = ["#e48527", "#000000", "#FFFFFF", "#c52c2e", "#209f6a"];
+
 const styles = theme => {
   return {
     container: {},
@@ -28,8 +30,14 @@ const styles = theme => {
 };
 
 class ThemeEditor extends Component {
+  onColorPick = color => {
+    this.props.onColorPick(color);
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, getPrimaryThemeColor } = this.props;
+    let selected = getPrimaryThemeColor;
+    console.log({ selected, COLORS });
     return (
       <Fragment>
         <div className={classes.container}>
@@ -37,11 +45,14 @@ class ThemeEditor extends Component {
           <div>
             <ListSubheader className={classes.subtitle}>COLOR</ListSubheader>
             <div className={classes.swatchContainer}>
-              <Swatch />
-              <Swatch />
-              <Swatch />
-              <Swatch />
-              <Swatch />
+              {COLORS.map(c => (
+                <Swatch
+                  key={c}
+                  color={c}
+                  onClick={() => this.onColorPick(c)}
+                  selected={selected}
+                />
+              ))}
             </div>
           </div>
         </div>
