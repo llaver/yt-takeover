@@ -8,9 +8,8 @@ const actions = Core.themeEditor.actions;
 const selectors = Core.themeEditor.selectors;
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    getPrimaryThemeColor: selectors.getPrimaryThemeColor(state)
+    getAccentColor: selectors.getAccentColor(state)
   };
 };
 
@@ -18,7 +17,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onColorPick: color =>
       dispatch({
-        type: actions.SET_THEME_PRIMARY_COLOR,
+        type: actions.SET_ACCENT_COLOR,
         color: color
       })
   };

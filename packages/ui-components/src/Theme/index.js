@@ -6,8 +6,6 @@ import { create } from "jss";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import makeTheme from "./createMuiTheme";
 
-const theme = makeTheme();
-
 /// https://material-ui-next.com/customization/css-in-js/#other-html-element
 const jss = create(jssPreset());
 const createGenerateClassName = () => {
@@ -34,9 +32,13 @@ class Theme extends Component {
   };
 
   render() {
+    const { accent, mainBackground, secondaryBackground } = this.props;
+
+    const theme = makeTheme(accent, mainBackground, secondaryBackground);
+
     return (
       <JssProvider jss={jss} generateClassName={generateClassName}>
-        <MuiThemeProvider theme={this.state.theme}>
+        <MuiThemeProvider theme={theme}>
           <CssBaseline />
           {this.props.children}
         </MuiThemeProvider>

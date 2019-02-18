@@ -27,11 +27,16 @@ const vh = (v, options = {}, vhResult) => {
   return finalResult;
 };
 
-export default () => {
+export default (accent, background, secondaryBackground) => {
   const vhResult = vhCheck();
 
   return createMuiTheme({
     palette: {
+      custom: {
+        mainAccent: accent,
+        mainBackground: background,
+        secondaryBackground: secondaryBackground
+      },
       type: "dark"
     },
     typography: {

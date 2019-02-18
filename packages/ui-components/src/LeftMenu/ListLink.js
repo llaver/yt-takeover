@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 
 const styles = theme => {
+  const mainAccent = theme.palette.custom.mainAccent;
   return {
     listItem: {
       fontSize: "1.1rem",
@@ -15,9 +16,9 @@ const styles = theme => {
       paddingBottom: "15px",
       backgroundColor: "#292a2f",
       textAlign: "center",
-      borderLeft: "2px solid #e58425",
+      borderLeft: `2px solid ${theme.palette.custom.mainAccent}`,
       "&:hover": {
-        backgroundColor: "#e58425"
+        backgroundColor: mainAccent === "#FFFFFF" ? "#17181c" : mainAccent
       }
     },
     listTextRoot: {
@@ -29,7 +30,7 @@ const styles = theme => {
 class ListLink extends Component {
   constructor(props) {
     super(props);
-    this.state = { iconColor: "#e58425" };
+    this.state = { hover: false };
   }
   render() {
     return (
@@ -37,10 +38,17 @@ class ListLink extends Component {
         button
         className={this.props.classes.listItem}
         onClick={() => this.props.onClick()}
-        onMouseEnter={() => this.setState({ iconColor: "#ffffff" })}
-        onMouseLeave={() => this.setState({ iconColor: "#e58425" })}
+        onMouseEnter={() => this.setState({ hover: true })}
+        onMouseLeave={() => this.setState({ hover: false })}
       >
-        <Icon icon={this.props.icon} color={this.state.iconColor} />
+        <Icon
+          icon={this.props.icon}
+          color={
+            this.state.hover
+              ? "#ffffff"
+              : this.props.theme.palette.custom.mainAccent
+          }
+        />
         <ListItemText
           classes={{ root: this.props.classes.listTextRoot }}
           primary={this.props.title}

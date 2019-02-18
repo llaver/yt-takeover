@@ -12,14 +12,14 @@ const styles = theme => {
       margin: "6px",
       fontSize: "1.7rem",
       letterSpacing: "0.2rem",
-      color: "#e58425",
+      color: theme.palette.custom.mainAccent,
       textAlign: "center"
     },
     subtitle: {
       lineHeight: "24px",
       fontSize: "1.2rem",
       letterSpacing: "0.2rem",
-      color: "#e58425",
+      color: theme.palette.custom.mainAccent,
       textAlign: "center"
     },
     swatchContainer: {
@@ -35,9 +35,8 @@ class ThemeEditor extends Component {
   };
 
   render() {
-    const { classes, getPrimaryThemeColor } = this.props;
-    let selected = getPrimaryThemeColor;
-    console.log({ selected, COLORS });
+    const { classes, getAccentColor } = this.props;
+    let selected = getAccentColor;
     return (
       <Fragment>
         <div className={classes.container}>

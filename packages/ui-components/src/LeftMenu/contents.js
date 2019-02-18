@@ -16,7 +16,7 @@ const styles = theme => {
     subheader: {
       fontSize: "1.2rem",
       letterSpacing: "0.2rem",
-      color: "#e58425",
+      color: theme.palette.custom.mainAccent,
       lineHeight: "36px",
       textAlign: "center",
       padding: 0
@@ -27,7 +27,7 @@ const styles = theme => {
       backgroundColor: "#17181c"
     },
     selected: {
-      backgroundColor: "#e58425"
+      backgroundColor: theme.palette.custom.mainAccent
     },
     list: {
       padding: "10px 0 0 0",

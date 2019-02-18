@@ -8,7 +8,7 @@ const styles = theme => {
   return {
     subheader: {
       fontSize: "1.4rem",
-      color: "#e58425",
+      color: theme.palette.custom.mainAccent,
       lineHeight: "36px",
       textAlign: "center"
     },
@@ -18,7 +18,7 @@ const styles = theme => {
       backgroundColor: "#292a2f"
     },
     indicator: {
-      backgroundColor: "#e58425"
+      backgroundColor: theme.palette.custom.mainAccent
     },
     tabsRoot: {
       height: "32px",

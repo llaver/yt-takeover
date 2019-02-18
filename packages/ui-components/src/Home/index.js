@@ -1,7 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import NavigationBar from "../NavigationBar"
 
 const styles = {
   root: {
@@ -12,19 +11,13 @@ const styles = {
 
 class Home extends Component {
   render() {
-    const {classes, onLeftMenu, onRightMenu} = this.props;
-    return (
-        <div className={classes.root}>
-          <NavigationBar onLeftMenu={onLeftMenu} onRightMenu={onRightMenu}/>
-        </div>
-    );
+    const { classes } = this.props;
+    return <div className={classes.root} />;
   }
 }
 
 Home.propTypes = {
-  classes: PropTypes.object.isRequired,
-  onLeftMenu: PropTypes.func.isRequired,
-  onRightMenu: PropTypes.func.isRequired
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Home);

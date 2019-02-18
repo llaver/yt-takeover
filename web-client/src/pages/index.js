@@ -9,18 +9,14 @@ import Menus from "./Menus";
 import Logout from "./Logout";
 //import PrivateRoute from "./PrivateRoute";
 import ErrorBoundry from "../ErrorBoundry";
-
-//import Core from "core";
-import UIComponents from "ui-components";
-
-const Theme = UIComponents.Theme;
+import ThemeController from "../Theme";
 
 const Pages = props => {
   //const { isAuthenticated } = props;
   const isAuthenticated = false;
 
   return (
-    <Theme>
+    <ThemeController>
       <ErrorBoundry>
         <Route
           exact
@@ -49,7 +45,7 @@ const Pages = props => {
       </ErrorBoundry>
       <Route exact path="/logout" component={Logout} />
       <Menus />
-    </Theme>
+    </ThemeController>
   );
 };
 

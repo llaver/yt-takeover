@@ -13,22 +13,29 @@ class HomeWrapper extends Component {
   };
 
   toggleLeftMenu = () => {
-      console.log("WE SWITCHIN THO");
-      this.setState({ leftMenu: !this.state.leftMenu });
+    this.setState({ leftMenu: !this.state.leftMenu });
   };
   toggleRightMenu = () => {
-      console.log("WHY YOU NOT THO", !this.state.rightMenu);
-      this.setState({rightMenu: !this.state.rightMenu});
+    this.setState({ rightMenu: !this.state.rightMenu });
   };
 
   render() {
     return (
       <React.Fragment>
         <div>
-          <Home onLeftMenu={this.toggleLeftMenu} onRightMenu={this.toggleRightMenu} />
+          <Home
+            onLeftMenu={this.toggleLeftMenu}
+            onRightMenu={this.toggleRightMenu}
+          />
           <div>
-            <LeftMenu open={this.state.leftMenu} onClose={this.toggleLeftMenu} />
-            <RightMenu open={this.state.rightMenu} onClose={this.toggleRightMenu} />
+            <LeftMenu
+              open={this.state.leftMenu}
+              onClose={this.toggleLeftMenu}
+            />
+            <RightMenu
+              open={this.state.rightMenu}
+              onClose={this.toggleRightMenu}
+            />
           </div>
         </div>
       </React.Fragment>

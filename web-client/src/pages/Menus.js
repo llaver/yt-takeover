@@ -10,10 +10,15 @@ import ThemeEditor from "../Components/RightMenu/ThemeEditor";
 const { actions, selectors } = Core.screenMenus;
 const RightMenu = Components.RightMenu;
 const LeftMenu = Components.LeftMenu;
+const NavigationBar = Components.NavigationBar;
 
 const MenuController = props => {
   return (
     <Fragment>
+      <NavigationBar
+        onLeftMenu={props.onLeftMenu}
+        onRightMenu={props.onRightMenu}
+      />
       <div
         style={{
           display: "flex",
@@ -47,7 +52,7 @@ const connectState = state => {
 
   const buildFeedbackLink = () => {
     const to = "EMAILHERE@EXAMPLE.COM";
-    const subject = "$APP_NAME Feedback";
+    const subject = "$yt-takeover feedback";
 
     const body = [
       "Thanks for taking the time to give us feedback",
@@ -70,6 +75,13 @@ const connectState = state => {
 
 const connectDispatch = dispatch => {
   return {
+    onLeftMenu: () => {
+      dispatch({ type: actions.TOGGLE_LEFT_MENU });
+    },
+
+    onRightMenu: () => {
+      dispatch({ type: actions.TOGGLE_RIGHT_MENU });
+    },
     toggleLeftMenu: () => {
       dispatch({ type: actions.TOGGLE_LEFT_MENU });
     },

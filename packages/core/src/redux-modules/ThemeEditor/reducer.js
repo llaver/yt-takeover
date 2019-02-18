@@ -1,18 +1,36 @@
 import * as actions from "./actions";
 
 const initial = {
-  primaryThemeColor: true
+  accentColor: "#e58425",
+  mainBackgroundColor: "#17181c",
+  secondaryBackgroundColor: "#292a2f"
 };
 
-const setPrimaryThemeColor = (state, action) => {
+const setAccentColor = (state, action) => {
   return {
     ...state,
-    primaryThemeColor: action.color
+    accentColor: action.color
+  };
+};
+
+const setMainBackgroundColor = (state, action) => {
+  return {
+    ...state,
+    mainBackgroundColor: action.color
+  };
+};
+
+const setSecondaryBackgroundColor = (state, action) => {
+  return {
+    ...state,
+    secondaryBackgroundColor: action.color
   };
 };
 
 const handlers = {
-  [actions.SET_THEME_PRIMARY_COLOR]: setPrimaryThemeColor
+  [actions.SET_ACCENT_COLOR]: setAccentColor,
+  [actions.SET_MAIN_BACKGROUND_COLOR]: setMainBackgroundColor,
+  [actions.SET_SECONDARY_BACKGROUND_COLOR]: setSecondaryBackgroundColor
 };
 
 export default (state = initial, action) => {

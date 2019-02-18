@@ -5,6 +5,7 @@ import Theme from "./Theme";
 import SignIn from "./SignIn";
 
 import Header from "./Header";
+import NavigationBar from "./NavigationBar";
 import Navigation from "./Navigation";
 
 import Item from "./Item";
@@ -17,6 +18,7 @@ export default {
   RightMenu,
   Theme,
   Header,
+  NavigationBar,
   Navigation,
   Item,
   ThemeEditor
