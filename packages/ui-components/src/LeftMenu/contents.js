@@ -23,17 +23,25 @@ const styles = theme => {
     },
     divider: {
       width: "150px",
-      margin: "0 auto",
+      margin: "12px auto 0",
       backgroundColor: "#17181c"
     },
     selected: {
       backgroundColor: theme.palette.custom.mainAccent
     },
     list: {
+      display: "flex",
+      flexDirection: "column",
       padding: "10px 0 0 0",
       height: "100%",
-      width: "175px",
-      backgroundColor: "#292a2f"
+      width: "180px",
+      backgroundColor: theme.palette.custom.secondaryBackground
+    },
+    logout: {
+      marginTop: "10px"
+    },
+    bottom: {
+      marginTop: "auto"
     }
   };
 };
@@ -58,13 +66,8 @@ const MainMenuContents = props => {
         />
         <ListLink
           icon={ICONS.FAVORITE}
-          onClick={() => props.push("/favorites")}
-          title="FAVORITES"
-        />
-        <ListLink
-          icon={ICONS.PLAYLIST}
-          onClick={() => props.push("/playlists")}
-          title="PLAYLISTS"
+          onClick={() => props.push("/hub")}
+          title="THE HUB"
         />
         <ListLink
           icon={ICONS.PROFILE}
@@ -76,35 +79,22 @@ const MainMenuContents = props => {
           onClick={() => props.push("/studio")}
           title="STUDIO"
         />
-        <ListLink
-          icon={ICONS.SETTINGS}
-          onClick={() => props.push("/settings")}
-          title="SETTINGS"
-        />
         <Divider className={classes.divider} />
         <ListSubheader className={classes.subheader}>
           SUBSCRIPTIONS
         </ListSubheader>
         <div style={{ height: "250px" }} />
         <Divider className={classes.divider} />
-        <ListLink
-          icon={ICONS.HISTORY}
-          onClick={() => props.push("/history")}
-          title="HISTORY"
-        />
-        <ListLink
-          icon={ICONS.SETTINGS}
-          onClick={() => props.push("/settings")}
-          title="SETTINGS"
-        />
         <div style={{ height: "250px" }} />
-        <Divider className={classes.divider} />
-        <ListLink
-          icon={ICONS.HISTORY}
-          onClick={() => props.push("/logout")}
-          title="LOGOUT"
-        />
-        <Divider className={classes.divider} />
+        <div className={classes.bottom}>
+          <Divider className={classes.divider} />
+          <ListLink
+            className={classes.logout}
+            icon={ICONS.HISTORY}
+            onClick={() => props.push("/logout")}
+            title="LOGOUT"
+          />
+        </div>
         {/* TODO Add other links (about, press, jobs, etc.) */}
       </List>
     </Fragment>

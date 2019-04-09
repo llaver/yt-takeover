@@ -4,6 +4,7 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import Swatch from "../../Common/Swatch";
 
 const COLORS = ["#e48527", "#000000", "#FFFFFF", "#c52c2e", "#209f6a"];
+const BACKGROUND_COLORS = ["#17181c", "#FFFFFF"];
 
 const styles = theme => {
   return {
@@ -34,9 +35,14 @@ class ThemeEditor extends Component {
     this.props.onColorPick(color);
   };
 
+  onBackgroundPick = color => {
+    this.props.onBackgroundPick(color);
+  };
+
   render() {
-    const { classes, getAccentColor } = this.props;
+    const { classes, getAccentColor, getBackgroundColor } = this.props;
     let selected = getAccentColor;
+    let selectedBackground = getBackgroundColor;
     return (
       <Fragment>
         <div className={classes.container}>
@@ -50,6 +56,21 @@ class ThemeEditor extends Component {
                   color={c}
                   onClick={() => this.onColorPick(c)}
                   selected={selected}
+                />
+              ))}
+            </div>
+          </div>
+          <div>
+            <ListSubheader className={classes.subtitle}>
+              BACKGROUND
+            </ListSubheader>
+            <div className={classes.swatchContainer}>
+              {BACKGROUND_COLORS.map(c => (
+                <Swatch
+                  key={c}
+                  color={c}
+                  onClick={() => this.onBackgroundPick(c)}
+                  selected={selectedBackground}
                 />
               ))}
             </div>

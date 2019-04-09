@@ -23,8 +23,7 @@ const MenuController = props => {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          height: "100%",
-          backgroundColor: "#17181c"
+          height: "100%"
         }}
       >
         <LeftMenu
@@ -34,6 +33,7 @@ const MenuController = props => {
           onSignOut={props.onSignOut}
           feedbackLink={props.feedbackLink}
         />
+        {props.children}
         <RightMenu
           open={props.rightMenuOpen}
           onClose={props.toggleRightMenu}

@@ -4,12 +4,16 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Contents from "./contents";
+import classNames from "classnames";
 
 const styles = theme => {
   return {
     drawer: {
       height: "100%",
-      backgroundColor: "#17181c"
+      backgroundColor: theme.palette.custom.secondaryBackground
+    },
+    hidden: {
+      display: "none"
     },
     paper: {
       height: "100%"
@@ -25,10 +29,16 @@ const RightMenu = props => {
         variant="persistent"
         open={props.open}
         onClose={props.onClose}
-        className={props.classes.drawer}
+        className={classNames(props.classes.drawer, {
+          [props.classes.hidden]: !props.open
+        })}
         classes={{ paper: props.classes.paper }}
         PaperProps={{
-          style: { position: "relative", overflowX: "hidden" }
+          style: {
+            backgroundColor: "rgba(0,0,0,0)",
+            position: "relative",
+            overflow: "hidden"
+          }
         }}
       >
         <Contents

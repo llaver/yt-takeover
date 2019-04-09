@@ -11,7 +11,9 @@ const styles = theme => {
       border: "2px solid transparent"
     },
     selected: {
-      border: "2px solid white"
+      border: `2px solid ${
+        theme.palette.custom.mainBackground === "#FFFFFF" ? "black" : "white"
+      }`
     },
     swatch: {
       width: "100%",

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -8,8 +9,11 @@ import Contents from "./contents";
 const styles = theme => {
   return {
     drawer: {
-      height: "100%",
-      backgroundColor: "#17181c"
+      height: "calc(100% - 64px)",
+      backgroundColor: theme.palette.custom.secondaryBackground
+    },
+    hidden: {
+      display: "none"
     },
     paper: {
       height: "100%"
@@ -24,7 +28,9 @@ const LeftMenu = props => {
         variant="persistent"
         open={props.open}
         onClose={props.onClose}
-        className={props.classes.drawer}
+        className={classNames(props.classes.drawer, {
+          [props.classes.hidden]: !props.open
+        })}
         classes={{ paper: props.classes.paper }}
         PaperProps={{
           style: { position: "relative", overflowX: "hidden" }

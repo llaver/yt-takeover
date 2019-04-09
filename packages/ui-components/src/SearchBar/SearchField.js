@@ -3,23 +3,25 @@ import { withStyles } from "@material-ui/core/styles";
 
 import Input from "@material-ui/core/Input";
 
-const styles = {
-  container: {
-    backgroundColor: "#17181c",
-    borderRadius: "3px",
-    height: "32px",
-    width: "500px",
-    display: "flex",
-    alignItems: "center"
-  },
-  input: {
-    fontSize: "1.2rem",
-    color: "white",
-    marginLeft: "10px"
-  },
-  inputText: {
-    letterSpacing: "0.1rem"
-  }
+const styles = theme => {
+  return {
+    container: {
+      backgroundColor: theme.palette.custom.mainBackground,
+      borderRadius: "3px",
+      height: "32px",
+      width: "500px",
+      display: "flex",
+      alignItems: "center"
+    },
+    input: {
+      fontSize: "1.2rem",
+      color: "white",
+      marginLeft: "10px"
+    },
+    inputText: {
+      letterSpacing: "0.1rem"
+    }
+  };
 };
 
 class SearchField extends PureComponent {
@@ -43,4 +45,4 @@ class SearchField extends PureComponent {
 
 SearchField.propTypes = {};
 
-export default withStyles(styles)(SearchField);
+export default withStyles(styles, { withTheme: true })(SearchField);

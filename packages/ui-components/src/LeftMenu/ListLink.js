@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import classNames from "classnames";
 import Icon from "../Icon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
@@ -7,6 +8,11 @@ import PropTypes from "prop-types";
 
 const styles = theme => {
   const mainAccent = theme.palette.custom.mainAccent;
+
+  const hoverBackgroundColor = () => {};
+
+  const hoverTextColor = () => {};
+
   return {
     listItem: {
       fontSize: "1.1rem",
@@ -14,7 +20,7 @@ const styles = theme => {
       height: "25px",
       paddingTop: "15px",
       paddingBottom: "15px",
-      backgroundColor: "#292a2f",
+      backgroundColor: theme.palette.custom.secondaryBackground,
       textAlign: "center",
       borderLeft: `2px solid ${theme.palette.custom.mainAccent}`,
       "&:hover": {
@@ -36,7 +42,10 @@ class ListLink extends Component {
     return (
       <ListItem
         button
-        className={this.props.classes.listItem}
+        className={classNames(
+          this.props.classes.listItem,
+          this.props.className
+        )}
         onClick={() => this.props.onClick()}
         onMouseEnter={() => this.setState({ hover: true })}
         onMouseLeave={() => this.setState({ hover: false })}

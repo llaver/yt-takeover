@@ -4,6 +4,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
+import { Search } from "./BrowseMenu";
+
 const styles = theme => {
   return {
     subheader: {
@@ -13,9 +15,9 @@ const styles = theme => {
       textAlign: "center"
     },
     rightMenuContainer: {
-      width: "175px",
+      width: "180px",
       height: "100%",
-      backgroundColor: "#292a2f"
+      backgroundColor: theme.palette.custom.secondaryBackground
     },
     indicator: {
       backgroundColor: theme.palette.custom.mainAccent
@@ -28,7 +30,7 @@ const styles = theme => {
     tabRoot: {
       height: "32px",
       minHeight: "32px",
-      width: "87.5px"
+      width: "90px"
     },
     tabWrapper: {
       fontSize: "1.2rem"
@@ -85,7 +87,9 @@ class RightMenuContents extends Component {
               />
             </Tabs>
           </AppBar>
-          {this.state.value === 0 && null}
+          {this.state.value === 0 && (
+            <div style={{ height: "calc(100% - 96px)" }}>{<Search />}</div>
+          )}
           {this.state.value === 1 && <div>{<ThemeEditor />}</div>}
         </div>
       </Fragment>

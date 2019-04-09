@@ -8,6 +8,7 @@ import Header from "./Header";
 import NavigationBar from "./NavigationBar";
 import Navigation from "./Navigation";
 
+import Watch from "./Watch";
 import Item from "./Item";
 import ThemeEditor from "./RightMenu/SettingsMenu/ThemeEditor";
 
@@ -20,6 +21,7 @@ export default {
   Header,
   NavigationBar,
   Navigation,
+  Watch,
   Item,
   ThemeEditor
 };

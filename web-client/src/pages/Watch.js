@@ -6,17 +6,17 @@ import { withStyles } from "@material-ui/core/styles";
 import UIComponents from "ui-components";
 import ThemeController from "../Theme";
 
-const Home = UIComponents.Home;
+const Watch = UIComponents.Watch;
 
 const styles = theme => {
   return {};
 };
 
-class HomeController extends Component {
+class WatchController extends Component {
   render() {
     return (
       <ThemeController>
-        <Home push={this.props.push} />
+        <Watch push={this.props.push} />
       </ThemeController>
     );
   }
@@ -30,7 +30,7 @@ const connectDispatch = dispatch => {
   return {};
 };
 
-const Enhanced = withStyles(styles, { withTheme: true })(HomeController);
+const Enhanced = withStyles(styles, { withTheme: true })(WatchController);
 export default connect(
   connectState,
   connectDispatch
