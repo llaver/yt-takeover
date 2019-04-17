@@ -35,7 +35,7 @@ const dummyPlayerData = {
 const dummyInfoData = {
   id: 1,
   linkId: "pl8cagt9gK0",
-  thumbnailUrl:
+  channelImageUrl:
     "https://i.ytimg.com/vi/pl8cagt9gK0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAFpxkWg65trKs2VkyrkyQMYcYoHw",
   title: "Pewdiepie vs. T-Series",
   creator: "DJ Khaled",
@@ -74,7 +74,6 @@ const styles = {
     overflowY: "auto"
   },
   video: {
-    backgroundColor: "white",
     display: "flex",
     flex: 5,
     flexDirection: "column",
@@ -92,7 +91,6 @@ const styles = {
     minHeight: "10vh"
   },
   videoInfo: {
-    backgroundColor: "orange",
     height: "100%",
     flex: 1,
     minHeight: "20vh"
