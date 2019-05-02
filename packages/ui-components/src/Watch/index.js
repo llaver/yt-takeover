@@ -12,12 +12,26 @@ const dummyVideoData = {
   id: 1,
   linkId: "pl8cagt9gK0",
   thumbnailUrl:
-    "https://i.ytimg.com/vi/pl8cagt9gK0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAFpxkWg65trKs2VkyrkyQMYcYoHw",
+      "https://i.ytimg.com/vi/pl8cagt9gK0",
   title: "Pewdiepie vs. T-Series",
   creator: "DJ Khaled",
   creatorId: "DjKhaled",
   views: 17109067,
-  likes: 69695
+  likes: 69695,
+  dislikes: 1075,
+  length: "String/Object",
+};
+
+const dummyVideoData = {
+  id: 1,
+  linkId: "pl8cagt9gK0",
+  thumbnailUrl:
+    "https://i.ytimg.com/vi/pl8cagt9gK0",
+  title: "Pewdiepie vs. T-Series",
+  creator: "DJ Khaled",
+  creatorId: "DjKhaled",
+  views: 17109067,
+  likes: 69695,
 };
 
 const dummyPlayerData = {
