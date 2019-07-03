@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
-import VideoCard from "../Common/VideoCard";
 import Typography from "@material-ui/core/Typography";
 
 const styles = {
@@ -58,7 +57,7 @@ class VideoDescription extends Component {
           </div>
           <div className={classes.continue}>
             <Typography className={classes.continueText} variant="h5">
-              Continue ▼
+              Show More ▼
             </Typography>
           </div>
         </div>

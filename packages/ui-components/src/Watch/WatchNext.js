@@ -5,45 +5,37 @@ import { withStyles } from "@material-ui/core/styles";
 import VideoCard from "../Common/VideoCard";
 import Typography from "@material-ui/core/Typography";
 
-const styles = theme => {
-  return {
-    container: {
-      minHeight: "250px"
-    },
-    title: {},
-    creator: {},
-    creatorName: {
-      color: theme.palette.custom.mainAccent
-    },
-    followingButton: {},
-    info: {},
-    likesInfo: {}
-  };
+const styles = {
+  container: {},
+  root: {
+    overflowY: 'scroll'
+  },
+  titleText: {
+    paddingLeft: '8px',
+    letterSpacing: '.3rem'
+  },
 };
 
-class WatchNext extends Component {
+class VideoInfo extends Component {
   render() {
-    const { classes, title, creator } = this.props;
+    const { classes, watchNext } = this.props;
     return (
       <div className={classes.container}>
-        <div className={classes.title}>
-          <Typography>{title}</Typography>
-        </div>
-        <div className={classes.creator}>
-          <div className={classes.creatorName}>{creator}</div>
-          <div className={classes.followingButton} />
-        </div>
-        <div className={classes.info}>
-          <div className={classes.views} />
-          <div className={classes.likesInfo} />
+        <div className={classes.root}>
+          <Typography className={classes.titleText} variant="h4">
+            Watch Next
+          </Typography>
+          {watchNext.map(i => (
+            <VideoCard key={i} />
+          ))}
         </div>
       </div>
     );
   }
 }
 
-WatchNext.propTypes = {
+VideoInfo.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(WatchNext);
+export default withStyles(styles)(VideoInfo);
