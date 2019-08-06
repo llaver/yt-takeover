@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-
-import VideoCard from "../Common/VideoCard";
+import Typography from "@material-ui/core/Typography";
 
 const styles = {
 	container: {},
-	root: {}
+	root: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'space-between'
+	},
+	avatar: {},
+	description: {},
+	level: {}
 };
 
 class ChannelDesc extends Component {
@@ -15,7 +21,17 @@ class ChannelDesc extends Component {
 		return (
 			<div className={classes.container}>
 				<div className={classes.root}>
-					<div />
+					<div className={classes.avatar}>
+						<img src={} alt={}/>
+						<Typography>
+							Edit Avatar
+						</Typography>
+					</div>
+					<div className={classes.description}>
+					
+					</div>
+					<div className={classes.level}>
+					</div>
 				</div>
 			</div>
 		);
