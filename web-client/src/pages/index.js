@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import { Route } from "react-router-dom";
 import SignIn from "./SignIn";
 import Home from "./Home";
+import Hub from "./Hub";
 import Watch from "./Watch";
 import PageTwo from "./PageTwo";
 import Menus from "./Menus";
@@ -30,6 +31,12 @@ const Pages = props => {
             exact
             path="/home"
             component={Home}
+            isAuthenticated={isAuthenticated}
+          />
+          <Route
+            exact
+            path="/hub"
+            component={Hub}
             isAuthenticated={isAuthenticated}
           />
           <Route

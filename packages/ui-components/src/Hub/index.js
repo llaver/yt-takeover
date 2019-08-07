@@ -7,14 +7,17 @@ import ChannelDesc from "./ChannelDesc";
 import UserAnalytics from "./UserAnalytics";
 import Videos from "./Videos";
 
-const dummyVideoData = {
+const dummyData = {
 	id: 1,
 	linkId: "pl8cagt9gK0",
 	thumbnailUrl:
 		"https://i.ytimg.com/vi/pl8cagt9gK0",
+	avatarUrl: "https://yt3.ggpht.com/a/AGF-l79QhNb0ytB6l8csaO31rsodY_gyG7hjNNUGyg=s288-c-k-c0xffffffff-no-rj-mo",
 	title: "Pewdiepie vs. T-Series",
+	level: 15,
 	creator: "DJ Khaled",
 	creatorId: "DjKhaled",
+	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 	views: 17109067,
 	likes: 69695,
 	dislikes: 1075,
@@ -60,7 +63,12 @@ class Hub extends Component {
 				<div className={classes.root}>
 					<div className={classes.channelInfo}>
 						<div className={classes.channelDesc}>
-							<ChannelDesc />
+							<ChannelDesc
+								avatarUrl={dummyData.avatarUrl}
+								creator={dummyData.creator}
+								description={dummyData.description}
+								level={dummyData.level}
+							/>
 						</div>
 						<div className={classes.userAnalytics}>
 							<UserAnalytics />
