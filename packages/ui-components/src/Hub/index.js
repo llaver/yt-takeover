@@ -39,7 +39,8 @@ const styles = {
 		display: "flex",
 		flexWrap: "wrap",
 		justifyContent: "space-between",
-		overflowY: "auto"
+		overflowY: "auto",
+		overflowX: "hidden"
 	},
 	channelInfo: {
 	

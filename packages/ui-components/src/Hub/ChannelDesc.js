@@ -19,7 +19,6 @@ const styles = theme => ({
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		flexWrap: "wrap",
 		padding: "12px",
 		overflowY: "auto"
 	},
@@ -37,7 +36,6 @@ const styles = theme => ({
 	},
 	description: {
 		padding: '25px',
-		width: '80%',
 		display: 'flex',
 		alignContent: 'space-between',
 		flexDirection: 'column'
@@ -66,7 +64,18 @@ const styles = theme => ({
 		fontWeight: "bold",
 		margin: '4px 0'
 	},
-	level: {}
+	level: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		margin: '0 20px'
+	},
+	levelNum: {
+		color: 'white'
+	},
+	levelText: {
+		color: theme.palette.custom.mainAccent
+	}
 });
 
 class ChannelDesc extends Component {
@@ -96,6 +105,12 @@ class ChannelDesc extends Component {
 						</Typography>
 					</div>
 					<div className={classes.level}>
+						<Typography variant="display1" className={classes.levelNum}>
+							{level}
+						</Typography>
+						<Typography variant="title" className={classes.levelText}>
+							LV
+						</Typography>
 					</div>
 				</div>
 			</div>
